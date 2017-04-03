@@ -1,9 +1,10 @@
 # credit_calc
 run applicatiion
 ```shell
+bundle install
 run app.rb
 ```
-run tests 
+run tests
 ```shell
 rspec
 ```
