@@ -1,0 +1,61 @@
+<strong>
+  Процентная ставка:
+</strong>
+  <%= "#{currency_format @result.percent_rate}%"%>
+<br/>
+<strong>
+  Сумма кредита:
+</strong>
+  <%= currency_format @result.credit_sum %>
+<table border="1" class="table">
+  <thead>
+    <tr>
+      <th>номер месяца</th>
+      <th>погашение кредита</th>
+      <th>погашение %</th>
+      <th>общий взнос</th>
+      <th>остаток кредита</th>
+    </tr>
+  </thead>
+<tbody>
+<% @result.each.with_index do |calc_info, index|%>
+  <tr>
+    <td>
+      <%= index + 1 %>
+    </td>
+    <td>
+      <%= currency_format calc_info.payed_credit_part %>
+    </td>
+    <td>
+      <%= currency_format calc_info.payed_percent %>
+    </td>
+    <td>
+      <%= currency_format calc_info.payed_full %>
+    </td>
+    <td>
+      <%= currency_format calc_info.balance.abs %>
+    </td>
+  </tr>
+  <% end %>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <%= currency_format @result.calculate_payed_credit_sum %>
+      </td>
+        <td><%= currency_format @result.calculate_payed_percent_sum %>
+      </td>
+      <td>
+        <%= currency_format @result.calculate_payed_full_sum %>
+      </td>
+      <td>
+    </td>
+    </tr>
+  </tbody>
+</table>
+<ol>
+  <li>Стоимость нотариального оформления договора залога может отличаться от приведенной.</li>
+  <li>Размер страхового взноса может колебаться в зависимости от комплекса предоставляемых страховой компанией услуг.</li>
+  <li>Стоимость внесения в реестр движимого имущества может отличаться от приведенной.</li>
+  <li>График соответствует случаю погашения кредита день в день. В случае отклонения от графика сумма начисленных процентов будет отличаться от приведенных в графике.</li>
+</ol>

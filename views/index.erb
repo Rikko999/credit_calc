@@ -1,0 +1,62 @@
+<h1>Кредитный онлайн-калькулятор</h1>
+<p>Предлагаем вам рассчитать ориентировочную сумму ежемесячных платежей по возврату основной суммы и процентов за пользование кредитом в зависимости от срока кредитования и размера процентной ставки, а также определить наиболее удобную для вас схему кредитования.</p>
+<p>Более подробную информацию можно получить при личной встрече с кредитным экспертом.</p>
+<form accept-charset="UTF-8" action="/result" id="calculation-form" method="post" target="_blank">
+<strong>Кредитные сведения:</strong>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <label for="percent-rate">
+          Процентная ставка (%):
+        </label>
+      </td>
+      <td>
+        <input id="percent-rate" name="percent_rate" placeholder="вводится через точку" required="required" type="text" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="credit-sum">
+          Сумма кредита:
+        </label>
+      </td>
+      <td>
+        <input id="credit-sum" name="credit_sum" required="required" type="text" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          Метод погашения кредита:
+        </label>
+      </td>
+      <td>
+        <input checked="checked" id="credit-method-usual" name="credit_method" type="radio" value="standart" />
+        <label for="credit-method-usual"> Стандартный</label>
+        <br />
+        <input id="credit-method-equal" name="credit_method" type="radio" value="annuity" />
+        <label for="credit-method-equal"> Аннуитентный (равными частями)</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="credit-period">
+          Срок кредита (в месяцах):
+        </label>
+      </td>
+      <td>
+        <input id="credit-period" name="credit_period" required="required" type="number" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>График платежей:</strong>
+      </td>
+      <td>
+        <input type="submit" value="Построить" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
